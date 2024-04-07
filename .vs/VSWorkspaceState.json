@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\controllers",
+    "\\src\\middlewares",
+    "\\src\\models",
+    "\\src\\routes",
+    "\\src\\views"
+  ],
+  "SelectedNode": "\\src\\models\\jobs.model.js",
+  "PreviewInSolutionExplorer": false
+}

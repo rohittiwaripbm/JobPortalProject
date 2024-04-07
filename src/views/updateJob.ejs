@@ -1,0 +1,56 @@
+<div class="container my-4">
+    <form method="post" action="/update/<%=job.id %>">
+        <input type="hidden" class="visually-hidden" id="hiddenInput" name="id" value="<%=job.id %>">
+        <input type="hidden" class="visually-hidden" name="applicants" value="<%=job.applicants %>">
+        <div class="mb-3">
+          <label for="jobName" class="form-label">Job Name</label>
+          <input type="text" name="jobName" value="<%= job.jobName %>" class="form-control" id="jobName">
+        </div>
+        <div class="mb-3">
+            <label for="companyName" class="form-label">CompanyName</label>
+            <input type="text" name="companyName" value="<%= job.companyName %>"  class="form-control" id="companyName">
+          </div>
+          <div class="mb-3">
+            <label for="jobType" class="form-label">Job Type</label>
+            <select name="jobType" class="form-select" id="jobType">
+                <option value="Tech" <% if (job.jobType == 'Tech') { %> selected <% } %>>Tech</option>
+                <option value="Non-Tech" <% if (job.jobType == 'Non-Tech') { %> selected <% } %>>Non-Tech</option>
+            </select>
+        </div>
+        <div class="mb-3">
+          <label for="jobLocation" class="form-label">Job Location</label>
+          <input type="text" value="<%=job.jobLocation%>" name="jobLocation" class="form-control" id="jobLocation">
+        </div>
+          <div class="mb-3">
+            <label for="jobSalary" class="form-label">Job Salary</label>
+            <input type="text" value="<%=job.jobSalary%>" name="jobSalary" class="form-control" id="jobSalary">
+          </div>
+          <div class="mb-3">
+            <label for="jobOpening" class="form-label">Job Openings</label>
+            <input type="text" value="<%=job.jobOpening%>" name="jobOpening" class="form-control" id="jobOpening">
+          </div>
+          <div class="mb-8">
+            <div class="row container">
+              <div class="col-sm-5" id="skills">
+                  <div class="input-group">
+                    <label  class="form-label">Skill required</label>
+                      <button type="button" class="btn btn-primary ms-2" id="addSkillBtn">+</button>
+                  </div>
+                  <% job.skillRequired.forEach((skill) => { %>
+                    <div class="input-group my-2 newSkillClass">
+                        <input type="text" name="skillRequired" class="form-control" value="<%= skill %>">
+                        <button type="button" class="btn btn-primary ms-2 deleteButton">X</button>
+                    </div>
+                <% }) %>
+              </div>
+          </div>
+          
+        </div>
+        
+        
+       
+       
+        <button  type="submit" class="btn btn-primary my-3">Submit</button>
+      </form>
+</div>
+<script src="/static/newJob/script.js"></script>

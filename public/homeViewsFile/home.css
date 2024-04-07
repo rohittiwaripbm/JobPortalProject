@@ -1,0 +1,44 @@
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    /* margin-top: 3vh;  */
+    top: 3rem;
+    margin-left: -15vh;
+}
+#dynamicText
+{
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+.right-image {
+    /* position: absolute; */
+    position: absolute;
+    float: right;
+    right: 10rem;
+    /* bottom: 23rem; */
+    top: 5rem;
+    max-width: 60vh; /* Adjust the width of the image as needed */
+}
+
+#dynamicText {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: 1px solid; /* Add a border to simulate typing */
+    animation: typing 3s steps(40, end); /* Call the typing animation */
+}
+
+/* Define the typing animation */
+@keyframes typing {
+    from { width: 0; } /* Start with no width */
+}
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
+.lbtn {
+    background-color: #FF2C90;
+    color: #FFFFFF;
+}

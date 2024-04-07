@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Resume</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% application.forEach((applicant) => { %>
+            <tr>
+                <th scope="row"><%= applicant.applicantid %></th>
+                <td><%= applicant.applicantName %></td>
+                <td><%= applicant.applicantEmail %></td>
+                <td><%= applicant.applicantContact %></td>
+                <td>
+                    <!-- Button to download PDF -->
+                    <a href="/static/<%= applicant.applicantResume %>" download="resume.pdf" class="btn btn-primary">Download Resume</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

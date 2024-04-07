@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/homeViewsFile/home.css">
+
+
+<% if(errors){ %>
+    <div class="alert alert-primary" role="alert">
+        <%=errors %>
+      </div>
+<%}%>
+
+<div class="container centered-container ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="background-color: transparent; color: white; border: none;">
+                <div class="card-body">
+                    <h1 style="color: #FF2C90;
+                    font-weight: bolder;
+                    font-size: 2.5em; line-height: 6rem;">A comprehensive platform for reliable</h1>
+                    <div style="height: 3rem;">
+                        <div id="dynamicText"></div>
+                    </div>
+                    <h4 class="text-white">Get Discovered. Get Hired.</h4>
+                    <div class="actions">
+                        <a href="/jobs" class="btn btn-lg lbtn"> I'm A Job Seeker </a>
+                        <% if(locals.userEmail) { %>
+                            
+                          <% } else{ %>
+                            <a href="/login"  class="btn btn-lg lbtn mx-2" >
+                                I'm A Recruiter
+                              </a>
+                         <% } %>
+                        
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="/static/homeViewsFile/banner.png" alt="Image" class="right-image">
+
+
+<script src="/static/homeViewsFile/home.js"></script>
